@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NatureMind - Mental Health & Wellness</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i> NatureMind - By Lina
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="#chat"><i class="fas fa-comments"></i> Chat</a>
+                <a href="#meditation"><i class="fas fa-spa"></i> Meditation</a>
+                <a href="#concentration"><i class="fas fa-brain"></i> Concentration</a>
+                <a href="#video"><i class="fas fa-video"></i> Video Call</a>
+                <br>
+                <br>
+                <a href="#ai-agent"><i class="fas fa-robot"></i> AI Health Analytics</a>
+                <a href="#nature-groups"><i class="fas fa-tree"></i> Nature Groups</a>
+                <a href="#cancer-support"><i class="fas fa-heartbeat"></i> Krebsunterstützung</a>
+            </div>
+        </nav>
+        
+        <main>
+            <section id="home" class="section active">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1>Welcome to NatureMind</h1>
+                        <p class="hero-subtitle">Supporting Cancer Patients on Their Journey to Wellness</p>
+                        <p class="hero-description">A holistic approach to mental wellness, connecting cancer patients with nature, community, and professional support.</p>
+                        <div class="hero-buttons">
+                            <button class="primary-btn" onclick="window.location.href='https://vapi.ai/?ref=main&msclkid=7ffb2561bc3010e2fa6e428e18c676ac'">
+                                <i class="fas fa-phone-alt"></i> Voice Call
+                            </button>
+                            <button class="secondary-btn">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <div class="hero-image">
+                        <img src="Qigong.jpg" alt="Peaceful nature scene">
+                    </div>
+                </div>
+
+                <div class="feature-cards">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Support Group">
+                        </div>
+                        <i class="fas fa-comments fa-3x"></i>
+                        <h3>Emotional Support</h3>
+                        <p>24/7 access to compassionate AI and human support for your emotional needs</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Meditation">
+                        </div>
+                        <i class="fas fa-spa fa-3x"></i>
+                        <h3>Guided Meditation</h3>
+                        <p>Specially designed meditation sessions to reduce stress and anxiety</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Nature Therapy">
+                        </div>
+                        <i class="fas fa-tree fa-3x"></i>
+                        <h3>Nature Therapy</h3>
+                        <p>Connect with others in peaceful natural settings for healing and support</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Family Support">
+                        </div>
+                        <i class="fas fa-users fa-3x"></i>
+                        <h3>Family Support</h3>
+                        <p>Resources and activities to strengthen family bonds during treatment</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI Support">
+                        </div>
+                        <i class="fas fa-robot fa-3x"></i>
+                        <h3>Personalized AI</h3>
+                        <p>AI companion that understands your unique journey and needs</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Medical Support">
+                        </div>
+                        <i class="fas fa-heartbeat fa-3x"></i>
+                        <h3>Medical Support</h3>
+                        <p>Access to specialized medical professionals and resources</p>
+                    </div>
+                </div>
+
+                <div class="testimonials-section">
+                    <h2>Stories of Hope and Healing</h2>
+                    <div class="testimonials">
+                        <div class="testimonial-card">
+                            <div class="testimonial-image">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Patient testimonial">
+                            </div>
+                            <div class="testimonial-content">
+                                <p class="quote">"The nature walks helped me find peace during my treatment. Connecting with others who understand made all the difference."</p>
+                                <p class="author">- Maria, Breast Cancer Survivor</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-image">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Patient testimonial">
+                            </div>
+                            <div class="testimonial-content">
+                                <p class="quote">"The family support sessions brought us closer together. We learned how to support each other through this journey."</p>
+                                <p class="author">- Thomas and Family</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nature-groups-home">
+                    <h2>Healing Through Nature</h2>
+                    <p class="section-description">Join our specially designed nature activities for cancer patients and their families</p>
+                    <div class="activity-cards">
+                        <a href="#nature-groups" class="activity-card">
+                            <div class="activity-image">
+                                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Forest Meditation Walk">
+                            </div>
+                            <div class="activity-header">
+                                <i class="fas fa-hiking fa-3x"></i>
+                                <h4>Gentle Forest Walk</h4>
+                            </div>
+                            <div class="activity-details">
+                                <p><i class="fas fa-calendar"></i> Every Saturday, 9:00 AM</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Black Forest, Baden-Württemberg</p>
+                                <p><i class="fas fa-user"></i> Led by: Sarah Müller (Cancer Support Specialist)</p>
+                                <p class="activity-description">A gentle walk designed for cancer patients, combining nature therapy with emotional support.</p>
+                            </div>
+                            <div class="activity-stats">
+                                <span><i class="fas fa-users"></i> 8/12 spots available</span>
+                                <span><i class="fas fa-star"></i> 4.8 (45 reviews)</span>
+                            </div>
+                            <div class="activity-footer">
+                                <button class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Activity</button>
+                            </div>
+                        </a>
+
+                        <a href="#nature-groups" class="activity-card">
+                            <div class="activity-image">
+                                <img src="lakesideyoga.jpg" alt="Lakeside Yoga">
+                            </div>
+                            <div class="activity-header">
+                                <i class="fas fa-water fa-3x"></i>
+                                <h4>Lakeside Yoga & Support</h4>
+                            </div>
+                            <div class="activity-details">
+                                <p><i class="fas fa-calendar"></i> Every Sunday, 10:00 AM</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Lake Constance, Bavaria</p>
+                                <p><i class="fas fa-user"></i> Led by: Michael Schmidt (Yoga Therapist)</p>
+                                <p class="activity-description">Gentle yoga sessions by the lake, designed for cancer patients and their caregivers.</p>
+                            </div>
+                            <div class="activity-stats">
+                                <span><i class="fas fa-users"></i> 5/15 spots available</span>
+                                <span><i class="fas fa-star"></i> 4.9 (32 reviews)</span>
+                            </div>
+                            <div class="activity-footer">
+                                <button class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Activity</button>
+                            </div>
+                        </a>
+
+                        <a href="#nature-groups" class="activity-card">
+                            <div class="activity-image">
+                                <img src="family.jpg" alt="Family Retreat">
+                            </div>
+                            <div class="activity-header">
+                                <i class="fas fa-mountain fa-3x"></i>
+                                <h4>Family Healing Retreat</h4>
+                            </div>
+                            <div class="activity-details">
+                                <p><i class="fas fa-calendar"></i> July 20-22, 2023</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Bavarian Alps</p>
+                                <p><i class="fas fa-user"></i> Led by: Dr. Anna Weber (Family Therapist)</p>
+                                <p class="activity-description">A weekend retreat for cancer patients and their families to connect and heal together.</p>
+                            </div>
+                            <div class="activity-stats">
+                                <span><i class="fas fa-users"></i> 6/12 spots available</span>
+                                <span><i class="fas fa-star"></i> 4.9 (56 reviews)</span>
+                            </div>
+                            <div class="activity-footer">
+                                <button class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Activity</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="chat" class="section">
+                <h2><i class="fas fa-comments"></i> Chat with NatureMind</h2>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message ai-message">
+                            Hallo! Ich bin Lina, Deine persönliche Begleiterin. Ich bin hier, um Dir zuzuhören und Dich zu unterstützen. Wie geht es Dir heute?
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="messageInput" placeholder="Type your message...">
+                        <button onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i> Send
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="meditation" class="section">
+                <h2><i class="fas fa-spa"></i> Meditation Sessions</h2>
+                <div class="meditation-timer">
+                    <div class="timer-display">10:00</div>
+                    <button class="start-btn">
+                        <i class="fas fa-play"></i> Start Meditation
+                    </button>
+                </div>
+            </section>
+
+            <section id="concentration" class="section">
+                <h2><i class="fas fa-brain"></i> Concentration Exercises</h2>
+                <div class="exercise-container">
+                    <div class="exercise-card">
+                        <i class="fas fa-lungs fa-3x"></i>
+                        <h3>Breathing Exercise</h3>
+                        <p>Follow the breathing pattern</p>
+                        <button><i class="fas fa-play"></i> Start Exercise</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="video" class="section">
+                <h2><i class="fas fa-video"></i> Video Call Support</h2>
+                <div class="video-container">
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <div class="video-placeholder">
+                                <i class="fas fa-user-md fa-4x"></i>
+                                <p>Dr. Sarah Johnson</p>
+                                <p class="specialty">Anxiety Specialist</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5 (128 reviews)</span>
+                                </div>
+                                <div class="reviews">
+                                    <p class="review-text">"Dr. Johnson is very understanding and provides excellent guidance."</p>
+                                </div>
+                            </div>
+                            <button class="call-btn"><i class="fas fa-phone"></i> Schedule Call</button>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-placeholder">
+                                <i class="fas fa-user-md fa-4x"></i>
+                                <p>Dr. Michael Chen</p>
+                                <p class="specialty">Stress Management</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0 (95 reviews)</span>
+                                </div>
+                                <div class="reviews">
+                                    <p class="review-text">"His stress management techniques have been life-changing."</p>
+                                </div>
+                            </div>
+                            <button class="call-btn"><i class="fas fa-phone"></i> Schedule Call</button>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-placeholder">
+                                <i class="fas fa-user-md fa-4x"></i>
+                                <p>Dr. Emily Rodriguez</p>
+                                <p class="specialty">Depression Specialist</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.0 (156 reviews)</span>
+                                </div>
+                                <div class="reviews">
+                                    <p class="review-text">"Very professional and empathetic approach to treatment."</p>
+                                </div>
+                            </div>
+                            <button class="call-btn"><i class="fas fa-phone"></i> Schedule Call</button>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-placeholder">
+                                <i class="fas fa-user-md fa-4x"></i>
+                                <p>Dr. Lisa Weber</p>
+                                <p class="specialty">Onkologin & Psychoonkologin</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0 (87 reviews)</span>
+                                </div>
+                                <div class="reviews">
+                                    <p class="review-text">"Ausgezeichnete Betreuung und fachliche Kompetenz."</p>
+                                </div>
+                            </div>
+                            <button class="call-btn"><i class="fas fa-phone"></i> Termin vereinbaren</button>
+                        </div>
+                        <div class="video-card ai-agent-card">
+                            <div class="video-placeholder">
+                                <i class="fas fa-robot fa-4x"></i>
+                                <p>NatureMind AI</p>
+                                <p class="specialty">Your Personal AI Assistant</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0 (1000+ interactions)</span>
+                                </div>
+                                <div class="reviews">
+                                    <p class="review-text">"Always available and provides immediate support when needed."</p>
+                                </div>
+                            </div>
+                            <button class="call-btn ai-call-btn" onclick="startVapiCall()"><i class="fas fa-robot"></i> Start AI Voice Call</button>
+                        </div>
+                    </div>
+                    <div class="video-call-interface" id="videoCallInterface" style="display: none;">
+                        <div class="video-screen">
+                            <video id="localVideo" autoplay muted></video>
+                            <video id="remoteVideo" autoplay></video>
+                        </div>
+                        <div class="video-controls">
+                            <button id="toggleVideo"><i class="fas fa-video"></i></button>
+                            <button id="toggleAudio"><i class="fas fa-microphone"></i></button>
+                            <button id="endCall" class="end-call"><i class="fas fa-phone-slash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ai-agent" class="section">
+                <h2><i class="fas fa-robot"></i>AI Health Analytics</h2>
+                <div class="ai-agent-container">
+                    <div class="ai-profile">
+                        <div class="ai-avatar">
+                            <i class="fas fa-robot fa-4x"></i>
+                        </div>
+                        <h3>Your AI Health Analytics</h3>
+                        <p>Learning from your interactions to provide personalized support</p>
+                    </div>
+                    <div class="behavior-analysis">
+                        <h3>Behavior Analysis</h3>
+                        <div class="analysis-chart">
+                            <canvas id="moodChart"></canvas>
+                        </div>
+                        <div class="insights">
+                            <h4>Insights</h4>
+                            <ul id="insightsList">
+                                <li>Your mood tends to improve after meditation sessions</li>
+                                <li>You're most active in the evening hours</li>
+                                <li>Stress levels decrease when you take regular breaks</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ai-recommendations">
+                        <h3>Personalized Recommendations</h3>
+                        <div class="recommendation-cards">
+                            <div class="rec-card">
+                                <i class="fas fa-walking"></i>
+                                <h4>Daily Walk</h4>
+                                <p>Based on your activity patterns, a 20-minute walk at 5 PM would be beneficial</p>
+                            </div>
+                            <div class="rec-card">
+                                <i class="fas fa-book"></i>
+                                <h4>Reading Time</h4>
+                                <p>Your focus is highest in the morning. Consider reading for 15 minutes after breakfast</p>
+                            </div>
+                            <div class="rec-card">
+                                <i class="fas fa-moon"></i>
+                                <h4>Sleep Schedule</h4>
+                                <p>Your sleep quality improves when you go to bed before 11 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="nature-groups" class="section">
+                <h2><i class="fas fa-tree"></i> Nature Groups & Activities</h2>
+                <div class="nature-groups-container">
+                    <div class="group-intro">
+                        <div class="nature-icon">
+                            <i class="fas fa-mountain fa-4x"></i>
+                        </div>
+                        <h3>Connect with Nature and People</h3>
+                        <p>Join our guided nature activities and group sessions to relax your mind, connect with others, and experience the healing power of nature.</p>
+                    </div>
+
+                    <div class="group-activities">
+                        <h3>Upcoming Group Activities</h3>
+                        <div class="activity-cards">
+                            <a href="#" class="activity-card">
+                                <div class="activity-header">
+                                    <i class="fas fa-hiking fa-3x"></i>
+                                    <h4>Forest Meditation Walk</h4>
+                                </div>
+                                <div class="activity-details">
+                                    <p><i class="fas fa-calendar"></i> Every Saturday, 9:00 AM</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Black Forest, Baden-Württemberg</p>
+                                    <p><i class="fas fa-user"></i> Led by: Sarah Müller (Certified Nature Therapist)</p>
+                                    <p class="activity-description">A gentle walk through the forest combined with guided meditation and mindfulness exercises.</p>
+                                </div>
+                                <div class="activity-stats">
+                                    <span><i class="fas fa-users"></i> 8/12 spots available</span>
+                                    <span><i class="fas fa-star"></i> 4.8 (45 reviews)</span>
+                                </div>
+                                <div class="activity-footer">
+                                    <button class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Activity</button>
+                                </div>
+                            </a>
+
+                            <a href="#" class="activity-card">
+                                <div class="activity-header">
+                                    <i class="fas fa-water fa-3x"></i>
+                                    <h4>Lakeside Yoga & Mindfulness</h4>
+                                </div>
+                                <div class="activity-details">
+                                    <p><i class="fas fa-calendar"></i> Every Sunday, 10:00 AM</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Lake Constance, Bavaria</p>
+                                    <p><i class="fas fa-user"></i> Led by: Michael Schmidt (Yoga & Mindfulness Coach)</p>
+                                    <p class="activity-description">Yoga session by the lake followed by group mindfulness practice and nature connection exercises.</p>
+                                </div>
+                                <div class="activity-stats">
+                                    <span><i class="fas fa-users"></i> 5/15 spots available</span>
+                                    <span><i class="fas fa-star"></i> 4.9 (32 reviews)</span>
+                                </div>
+                                <div class="activity-footer">
+                                    <button class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Activity</button>
+                                </div>
+                            </a>
+
+                            <a href="#" class="activity-card">
+                                <div class="activity-header">
+                                    <i class="fas fa-campground fa-3x"></i>
+                                    <h4>Nature Connection Workshop</h4>
+                                </div>
+                                <div class="activity-details">
+                                    <p><i class="fas fa-calendar"></i> Monthly, Next: June 15th</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Bavarian Forest National Park</p>
+                                    <p><i class="fas fa-user"></i> Led by: Dr. Anna Weber (Ecopsychologist)</p>
+                                    <p class="activity-description">A full-day workshop combining nature therapy, group sharing, and personal reflection in a beautiful forest setting.</p>
+                                </div>
+                                <div class="activity-stats">
+                                    <span><i class="fas fa-users"></i> 3/10 spots available</span>
+                                    <span><i class="fas fa-star"></i> 5.0 (28 reviews)</span>
+                                </div>
+                                <div class="activity-footer">
+                                    <button class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Activity</button>
+                                </div>
+                            </a>
+
+                            <a href="#" class="activity-card">
+                                <div class="activity-header">
+                                    <i class="fas fa-mountain fa-3x"></i>
+                                    <h4>Mountain Meditation Retreat</h4>
+                                </div>
+                                <div class="activity-details">
+                                    <p><i class="fas fa-calendar"></i> July 20-22, 2023</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Bavarian Alps</p>
+                                    <p><i class="fas fa-user"></i> Led by: Thomas Wagner (Meditation Guide)</p>
+                                    <p class="activity-description">A weekend retreat combining mountain hiking, meditation, and group sharing in the stunning Bavarian Alps.</p>
+                                </div>
+                                <div class="activity-stats">
+                                    <span><i class="fas fa-users"></i> 6/12 spots available</span>
+                                    <span><i class="fas fa-star"></i> 4.9 (56 reviews)</span>
+                                </div>
+                                <div class="activity-footer">
+                                    <button class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Activity</button>
+                                </div>
+                            </a>
+
+                            <a href="#" class="activity-card">
+                                <div class="activity-header">
+                                    <i class="fas fa-leaf fa-3x"></i>
+                                    <h4>Forest Bathing Experience</h4>
+                                </div>
+                                <div class="activity-details">
+                                    <p><i class="fas fa-calendar"></i> Every Wednesday, 2:00 PM</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Schönbuch Nature Park</p>
+                                    <p><i class="fas fa-user"></i> Led by: Lisa Braun (Forest Therapy Guide)</p>
+                                    <p class="activity-description">Experience the Japanese practice of Shinrin-yoku (forest bathing) in the peaceful Schönbuch forest.</p>
+                                </div>
+                                <div class="activity-stats">
+                                    <span><i class="fas fa-users"></i> 4/8 spots available</span>
+                                    <span><i class="fas fa-star"></i> 4.7 (38 reviews)</span>
+                                </div>
+                                <div class="activity-footer">
+                                    <button class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Activity</button>
+                                </div>
+                            </a>
+
+                            <a href="#" class="activity-card">
+                                <div class="activity-header">
+                                    <i class="fas fa-sun fa-3x"></i>
+                                    <h4>Sunrise Meditation & Nature Journaling</h4>
+                                </div>
+                                <div class="activity-details">
+                                    <p><i class="fas fa-calendar"></i> Every Friday, 5:30 AM</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Various Locations</p>
+                                    <p><i class="fas fa-user"></i> Led by: Julia Fischer (Mindfulness Coach)</p>
+                                    <p class="activity-description">Start your day with a peaceful sunrise meditation followed by nature journaling and group sharing.</p>
+                                </div>
+                                <div class="activity-stats">
+                                    <span><i class="fas fa-users"></i> 7/10 spots available</span>
+                                    <span><i class="fas fa-star"></i> 4.8 (42 reviews)</span>
+                                </div>
+                                <div class="activity-footer">
+                                    <button class="join-btn"><i class="fas fa-sign-in-alt"></i> Join Activity</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="personal-coaches">
+                        <h3>Our Nature Coaches</h3>
+                        <div class="coach-cards">
+                            <a href="#" class="coach-card">
+                                <div class="coach-avatar">
+                                    <i class="fas fa-user-circle fa-4x"></i>
+                                </div>
+                                <h4>Sarah Müller</h4>
+                                <p class="coach-specialty">Nature Therapist & Forest Guide</p>
+                                <div class="coach-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0 (120 sessions)</span>
+                                </div>
+                                <p class="coach-bio">Certified nature therapist with 8 years of experience in forest therapy and mindfulness practices.</p>
+                                <div class="coach-footer">
+                                    <button class="book-coach-btn"><i class="fas fa-calendar-check"></i> Book Session</button>
+                                </div>
+                            </a>
+
+                            <a href="#" class="coach-card">
+                                <div class="coach-avatar">
+                                    <i class="fas fa-user-circle fa-4x"></i>
+                                </div>
+                                <h4>Michael Schmidt</h4>
+                                <p class="coach-specialty">Yoga & Mindfulness Coach</p>
+                                <div class="coach-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.8 (95 sessions)</span>
+                                </div>
+                                <p class="coach-bio">Experienced yoga instructor specializing in nature-based mindfulness and stress reduction techniques.</p>
+                                <div class="coach-footer">
+                                    <button class="book-coach-btn"><i class="fas fa-calendar-check"></i> Book Session</button>
+                                </div>
+                            </a>
+
+                            <a href="#" class="coach-card">
+                                <div class="coach-avatar">
+                                    <i class="fas fa-user-circle fa-4x"></i>
+                                </div>
+                                <h4>Dr. Anna Weber</h4>
+                                <p class="coach-specialty">Ecopsychologist</p>
+                                <div class="coach-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0 (75 sessions)</span>
+                                </div>
+                                <p class="coach-bio">PhD in Ecopsychology with expertise in nature-based healing and group therapy.</p>
+                                <div class="coach-footer">
+                                    <button class="book-coach-btn"><i class="fas fa-calendar-check"></i> Book Session</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cancer-support" class="section">
+                <h2><i class="fas fa-heartbeat"></i> Unterstützung für Krebspatienten</h2>
+                <div class="cancer-support-container">
+                    <div class="cancer-intro">
+                        <div class="cancer-icon">
+                            <i class="fas fa-ribbon fa-4x"></i>
+                        </div>
+                        <h3>Sie sind nicht allein</h3>
+                        <p>Eine Krebsdiagnose verändert das Leben. Wir bieten Ihnen Unterstützung, Informationen und Ressourcen, um Sie auf Ihrem Weg zu begleiten.</p>
+                    </div>
+                    
+                    <div class="cancer-resources-section">
+                        <h3>Ressourcen für Krebspatienten</h3>
+                        <div class="resource-cards">
+                            <div class="resource-card">
+                                <i class="fas fa-book-medical"></i>
+                                <h4>Informationen zur Chemotherapie</h4>
+                                <p>Erfahren Sie, was Sie vor, während und nach der Chemotherapie erwarten können.</p>
+                                <button class="resource-btn">Mehr erfahren</button>
+                            </div>
+                            <div class="resource-card">
+                                <i class="fas fa-users"></i>
+                                <h4>Selbsthilfegruppen</h4>
+                                <p>Verbinden Sie sich mit anderen, die ähnliche Erfahrungen gemacht haben.</p>
+                                <button class="resource-btn">Gruppen finden</button>
+                            </div>
+                            <div class="resource-card">
+                                <i class="fas fa-heart"></i>
+                                <h4>Umgang mit Angst</h4>
+                                <p>Techniken und Strategien zur Bewältigung von Angst und Unsicherheit.</p>
+                                <button class="resource-btn">Techniken ansehen</button>
+                            </div>
+                            <div class="resource-card">
+                                <i class="fas fa-utensils"></i>
+                                <h4>Ernährungstipps</h4>
+                                <p>Ernährungsempfehlungen für die Zeit während und nach der Behandlung.</p>
+                                <button class="resource-btn">Tipps ansehen</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cancer-stories">
+                        <h3>Erfahrungsberichte</h3>
+                        <div class="story-cards">
+                            <div class="story-card">
+                                <div class="story-avatar">
+                                    <i class="fas fa-user-circle fa-3x"></i>
+                                </div>
+                                <h4>Maria, 42</h4>
+                                <p class="story-quote">"Die Angst vor der Chemotherapie war fast schlimmer als die Behandlung selbst. Die Meditation und Atemübungen haben mir sehr geholfen."</p>
+                            </div>
+                            <div class="story-card">
+                                <div class="story-avatar">
+                                    <i class="fas fa-user-circle fa-3x"></i>
+                                </div>
+                                <h4>Thomas, 38</h4>
+                                <p class="story-quote">"Der Austausch mit anderen Betroffenen war für mich ein Wendepunkt. Zu wissen, dass ich nicht allein bin, hat mir Kraft gegeben."</p>
+                            </div>
+                            <div class="story-card">
+                                <div class="story-avatar">
+                                    <i class="fas fa-user-circle fa-3x"></i>
+                                </div>
+                                <h4>Julia, 45</h4>
+                                <p class="story-quote">"Die Ernährungstipps haben mir geholfen, meine Energie während der Behandlung aufrechtzuerhalten. Jeder Tag ist ein Schritt vorwärts."</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cancer-contact">
+                        <h3>Professionelle Unterstützung</h3>
+                        <p>Unsere Experten stehen Ihnen zur Verfügung, um Ihre Fragen zu beantworten und Sie zu unterstützen.</p>
+                        <button class="contact-btn"><i class="fas fa-envelope"></i> Kontakt aufnehmen</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/@vapi-ai/web@latest"></script>
+    <script>
+        const vapi = new Vapi({
+            assistantId: 'a523e567-a509-4ea9-881a-815c25e72918',
+            shareKey: '5a7ab965-585e-4ef4-aca0-c5e49c1a42a4',
+            config: {
+                voice: {
+                    provider: '11labs',
+                    voiceId: '21m00Tcm4TlvDq8ikWAM'
+                }
+            }
+        });
+
+        function startVapiCall() {
+            vapi.start();
+        }
+
+        // Handle Vapi events
+        vapi.on('call-start', () => {
+            console.log('Call started');
+        });
+
+        vapi.on('call-end', () => {
+            console.log('Call ended');
+        });
+
+        vapi.on('error', (error) => {
+            console.error('Vapi error:', error);
+        });
+    </script>
+   <script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '67efa00453654e3a5fab2e87' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            voice: {
+              url: "https://runtime-api.voiceflow.com"
+            }
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+</body>
+</html> 
