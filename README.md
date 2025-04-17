@@ -1,130 +1,98 @@
-**README.md**
+# 🌿 NatureMind AI – Mental Health Support Web App
 
-# NatureMind — Mental Health Support with Nature
+A web-based AI companion designed to support cancer patients' mental wellness by connecting them to nature and community.
 
-NatureMind is a web application designed to support cancer patients on their journey to wellness by combining the power of community, nature, and technology. This app allows users to interact with a calming frontend interface and log their moods into a backend-powered database for analytics and support.
+## 📁 Project Structure
 
----
-
-## 📅 Features
-- **Calm UI** with nature-themed sections: Meditation, Concentration, AI Health Analytics, and more
-- **Mood Logging**: Click one button to store your current emotional state
-- **Backend API** using Flask to save user input
-- **SQLite Database** to persist logs for future use
-- **Voiceflow Integration** for conversational UI
-
----
-
-## 🧱 Tech Stack
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Python, Flask, flask_cors
-- **Database**: SQLite
-
----
-
-## 📆 How to Run the App
-
-### ✨ Frontend
-```bash
-cd frontend
-# Use Live Server in VS Code or open index.html in browser
+```
+mental-health-app/
+├── backend/
+│   ├── mental_health_backend.py     # Flask backend with SQLite logging
+│   └── mental_health.db             # Local database (auto-created on first run)
+├── frontend/
+│   ├── index.html                   # Landing page with UI
+│   ├── styles.css                   # Styling for frontend
+│   ├── app.js                       # JavaScript logic for UI + fetch API
+│   └── assets/                      # Images and icons
+├── .gitignore
+├── README.md
 ```
 
-### ⚙️ Backend
+---
+
+## 🚀 Getting Started
+
+### 🔧 Backend Setup (Flask + SQLite)
 ```bash
 cd backend
 python3 -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-pip install flask flask_cors
+source venv/bin/activate
+pip install flask flask-cors
 python mental_health_backend.py
 ```
-The backend will run at `http://127.0.0.1:5000`
 
----
+Backend runs at: **http://127.0.0.1:5001**
 
-## 📊 One Button App Demo
-Click the **"Test Mood Log"** button on the homepage.
-- This calls the `/log` POST API
-- Logs are stored in `mental_health.db`
-
----
-
-## 📲 Screenshots
-![](frontend/assets/bg.png)
-
----
-
-## 🙏 Acknowledgements
-- IBM AI Coursera Template
-- Open source icons by FontAwesome
-- Voiceflow chat API
-
----
-
-## 🌐 Live Demo
-> *Optional: Add deployment link here if hosted on Netlify, Vercel, or Heroku*
-
----
-
-## ✍️ Author
-**Anusuya Kugavarathan**  
-[GitHub Repo](https://github.com/Anukuga/nature-by-AI)
-
----
-
-**.gitignore**
+### 🌐 Frontend Setup
+Open `index.html` with Live Server (VS Code extension) or use:
+```bash
+cd frontend
+open index.html  # or right-click and "Open with Live Server"
 ```
-# Python virtual environment
+Frontend runs at: **http://127.0.0.1:5500/frontend/index.html**
+
+---
+
+## ✅ Features
+- Mood logging from UI button
+- Data stored in SQLite via Flask API
+- Clean UI with navigation
+- Fully working "One-button app" concept
+
+---
+
+## 🧪 Testing
+Click the **"Test Mood Log"** button on the homepage and verify that:
+- You get a success alert
+- The database file `mental_health.db` is updated
+- The backend prints a POST `/log` in terminal
+
+---
+
+## 📦 .gitignore
+```bash
 venv/
-
-# Database
-*.db
-
-# VS Code settings
-.vscode/
-
-# Python cache files
-__pycache__/
 *.pyc
-
-# OS files
+__pycache__/
+mental_health.db
 .DS_Store
-Thumbs.db
 ```
 
 ---
 
-**Pull Request Message Template**
-```
-Title: 🌱 Setup Project Structure & Add Mood Logging Feature
+## ✅ Pull Request Guidelines
+When submitting a PR:
+- Provide a clear title (e.g., "Add mood logging route")
+- Include summary: what was added/modified/removed
+- Mention if any manual test was performed
 
-Description:
-- Added clear separation between frontend and backend folders
-- Implemented one-button mood logging with Flask + SQLite
-- Integrated Voiceflow assistant and static assets
-- Added .gitignore and README.md for clarity
-
-Test:
-- Ran frontend locally with Live Server
-- Backend tested via localhost:5000/log using Test Mood button
-- All data successfully inserted into SQLite DB
-
-Reviewer Notes:
-- Let me know if you want to see the DB output or test on your machine
-```
+Example:
+> **Title:** Add mood log API POST route  
+> **Description:** Connected button click to `/log` endpoint; added JSON parsing; tested with sample frontend call.
 
 ---
 
-**Checklist for Showing Professor**
+## 👨‍🏫 Submitting to Professor
+Share this repository URL: [https://github.com/Anukuga/nature-by-AI](https://github.com/Anukuga/nature-by-AI)
 
-- [x] Mood button logs to database
-- [x] Clear README with instructions
-- [x] Project structured by `frontend/` and `backend/`
-- [x] Pushed to GitHub `main` branch
-- [x] `.gitignore` file present
-- [x] Flask runs at `localhost:5000`, Live Server at `localhost:5500`
-- [x] Ready for pull request
+Mention:
+- The app runs frontend on port **5500**, backend Flask server on **5001**.
+- One-button functionality fully logs data to local DB.
+- Codebase is organized into `frontend/` and `backend/` directories.
 
 ---
-Let me know if you'd like a walkthrough video script or screenshot export next!
 
+## ✨ Future Ideas
+- Export health logs
+- AI chatbot integration
+- Admin dashboard to view trends
