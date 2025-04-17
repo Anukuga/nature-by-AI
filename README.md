@@ -82,15 +82,7 @@ Example:
 
 ---
 
-## 👨‍🏫 Submitting to Professor
-Share this repository URL: [https://github.com/Anukuga/nature-by-AI](https://github.com/Anukuga/nature-by-AI)
 
-Mention:
-- The app runs frontend on port **5500**, backend Flask server on **5001**.
-- One-button functionality fully logs data to local DB.
-- Codebase is organized into `frontend/` and `backend/` directories.
-
----
 
 ## ✨ Future Ideas
 - Export health logs
