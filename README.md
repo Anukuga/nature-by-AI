@@ -66,9 +66,12 @@ Best for development to avoid CORS issues.
 	•	GET http://127.0.0.1:5001/logs — Fetch all mood logs
 
 Ensure the backend is running before using the frontend to avoid connection errors.
-### Option A: Use Flask (no Docker)
+
+
 
 ```bash
+
+Option A: Use Flask (no Docker)
 cd backend
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -77,8 +80,9 @@ python mental_health_backend.py
 
 Backend runs at: http://127.0.0.1:5001
 Frontend (open manually): frontend/index.html (use Live Server or VS Code plugin)
-
+ 
 Option B: Run with Docker
+bash 
 docker-compose up --build
 
 Backend runs at: http://127.0.0.1:5001
