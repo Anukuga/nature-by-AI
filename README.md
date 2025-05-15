@@ -1,90 +1,130 @@
-# 🌿 NatureMind AI – Mental Health Support Web App
+# 🌿 NatureMind – One-Button Health Logger
 
-A web-based AI companion designed to support cancer patients' mental wellness by connecting them to nature and community.
-
-## 📁 Project Structure
-
-```
-mental-health-app/
-├── backend/
-│   ├── mental_health_backend.py     # Flask backend with SQLite logging
-│   └── mental_health.db             # Local database (auto-created on first run)
-├── frontend/
-│   ├── index.html                   # Landing page with UI
-│   ├── styles.css                   # Styling for frontend
-│   ├── app.js                       # JavaScript logic for UI + fetch API
-│   └── assets/                      # Images and icons
-├── .gitignore
-├── README.md
-```
+NatureMind is a lightweight mental health logging app designed for simplicity and accessibility. With just one button, users can log their mood and notes. This app is ideal for patients, caregivers, or wellness programs aiming to track emotional well-being over time.
 
 ---
 
-## 🚀 Getting Started
+## 🧠 What This App Does
 
-### 🔧 Backend Setup (Flask + SQLite)
+✅ One-button interface to log mental health  
+✅ Logs are saved in a local SQLite database  
+✅ Mood and optional notes are stored with a timestamp  
+✅ All logs retrievable via API (`/logs`)  
+✅ Backend built with Flask  
+✅ Frontend built with HTML + JS + CSS  
+✅ CORS enabled for API access  
+✅ Dockerized for easy deployment  
+✅ Ready for deployment on [Render](https://render.com)
+
+---
+
+## 📁 Folder Structure
+MENTAL-HEALTH-APP/
+├── backend/
+│   ├── mental_health_backend.py     # Flask backend
+│   ├── check_logs.py                # (Optional) CLI DB viewer
+│   ├── requirements.txt             # Python dependencies
+│   └── Dockerfile                   # Docker config for backend
+├── frontend/
+│   ├── index.html                   # Main UI page
+│   ├── styles.css                   # UI styling
+│   ├── app.js                       # JS logic (log + fetch API)
+│   ├── assets/                      # Images/icons
+│   └── *.jpg / *.png                # UI visuals
+├── docker-compose.yml              # One-command launcher
+├── README.md                       # You’re reading it!
+└── .gitignore
+---
+
+## 🚀 How to Run Locally
+
+🌐 How to Run the Frontend
+
+The frontend is located in the frontend/ folder and includes the user interface for mood logging. It communicates with the Flask backend via HTTP.
+
+✅ Option 1: Run with Live Server (Recommended)
+
+Best for development to avoid CORS issues.
+
+	1.	Open frontend/index.html in Visual Studio Code
+	2.	Right-click the file and choose “Open with Live Server”
+	3.	The app will open at a URL like:
+    http://127.0.0.1:5500/frontend/index.html
+    
+	4.	Click the “TEST MOOD LOG” button to submit a mood + note
+(Make sure your backend is running on port 5001)
+
+✅ Option 2: Open in Browser Manually
+	1.	Navigate to the frontend/ folder
+	2.	Double-click index.html to open it in your browser
+	3.	Note: Some features (like mood logging) may be blocked by the browser due to local security restrictions. Use Live Server if that happens.
+
+⸻
+
+📡 API Endpoints Used by Frontend
+	•	POST http://127.0.0.1:5001/log — Log a new mood entry
+	•	GET http://127.0.0.1:5001/logs — Fetch all mood logs
+
+Ensure the backend is running before using the frontend to avoid connection errors.
+### Option A: Use Flask (no Docker)
+
 ```bash
 cd backend
 python3 -m venv venv
-source venv/bin/activate
-pip install flask flask-cors
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
 python mental_health_backend.py
-```
 
-Backend runs at: **http://127.0.0.1:5001**
+Backend runs at: http://127.0.0.1:5001
+Frontend (open manually): frontend/index.html (use Live Server or VS Code plugin)
 
-### 🌐 Frontend Setup
-Open `index.html` with Live Server (VS Code extension) or use:
-```bash
-cd frontend
-open index.html  # or right-click and "Open with Live Server"
-```
-Frontend runs at: **http://127.0.0.1:5500/frontend/index.html**
+Option B: Run with Docker
+docker-compose up --build
 
----
+Backend runs at: http://127.0.0.1:5001
+	•	You can open frontend/index.html in a browser manually or host it via Vercel/Netlify
 
-## ✅ Features
-- Mood logging from UI button
-- Data stored in SQLite via Flask API
-- Clean UI with navigation
-- Fully working "One-button app" concept
+⸻
 
----
+🌍 Deploy to Render
+	1.	Push this project to GitHub
+	2.	Go to https://render.com
+	3.	Create New → Web Service
+	4.	Link your GitHub repo
+	5.	Set:
+	•	Build command: pip install -r requirements.txt
+	•	Start command: python mental_health_backend.py
+	6.	Set environment to Python 3.9 or later
+	7.	Click Deploy
 
-## 🧪 Testing
-Click the **"Test Mood Log"** button on the homepage and verify that:
-- You get a success alert
-- The database file `mental_health.db` is updated
-- The backend prints a POST `/log` in terminal
+⸻
 
----
+🔌 API Endpoints
 
-## 📦 .gitignore
-```bash
-venv/
-*.pyc
-__pycache__/
-mental_health.db
-.DS_Store
-```
+POST /log
 
----
+Logs a mood and optional note.
+{
+  "mood": "happy",
+  "notes": "Walked in the park"
+}
+GET /logs
 
-## ✅ Pull Request Guidelines
-When submitting a PR:
-- Provide a clear title (e.g., "Add mood logging route")
-- Include summary: what was added/modified/removed
-- Mention if any manual test was performed
-
-Example:
-> **Title:** Add mood log API POST route  
-> **Description:** Connected button click to `/log` endpoint; added JSON parsing; tested with sample frontend call.
-
----
-
-
-
-## ✨ Future Ideas
-- Export health logs
-- AI chatbot integration
-- Admin dashboard to view trends
+Returns an array of all logged entries:
+[
+  {
+    "id": 1,
+    "timestamp": "2025-05-15T14:20:00",
+    "mood": "happy",
+    "notes": "Walked in the park"
+  }
+]
+🛠️ Tools Used
+	•	Python 3.9
+	•	Flask
+	•	Flask-CORS
+	•	SQLite
+	•	Docker + Docker Compose
+	•	VS Code + Live Server
+	•	Render (for deployment)
+	•	Git + GitHub (for version control)
