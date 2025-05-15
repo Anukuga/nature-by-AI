@@ -82,7 +82,8 @@ Backend runs at: http://127.0.0.1:5001
 Frontend (open manually): frontend/index.html (use Live Server or VS Code plugin)
  
 Option B: Run with Docker
-bash 
+
+
 docker-compose up --build
 
 Backend runs at: http://127.0.0.1:5001
