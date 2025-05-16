@@ -1,6 +1,3 @@
-Sure! Here’s the entire README.md content in one copyable block:
-
-⸻
 
 
 # 🌿 NatureMind – One-Button Mental Health Logger
