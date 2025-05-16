@@ -1,38 +1,35 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import sqlite3
 import datetime
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='frontend', static_url_path='')
 CORS(app)
 
 DB_PATH = 'mental_health.db'
 
-# ✅ Initialize DB and table if it doesn't exist
 def init_db():
-    if not os.path.exists(DB_PATH):
-        conn = sqlite3.connect(DB_PATH)
-        cursor = conn.cursor()
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS health_logs (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                timestamp TEXT,
-                mood TEXT,
-                notes TEXT
-            )
-        ''')
-        conn.commit()
-        conn.close()
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS health_logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp TEXT,
+            mood TEXT,
+            notes TEXT
+        )
+    ''')
+    conn.commit()
+    conn.close()
 
 init_db()
 
-# ✅ POST /log — Save mood + notes
 @app.route('/log', methods=['POST'])
 def log_health():
     data = request.get_json()
     mood = data.get('mood')
-    notes = data.get('notes', '')
+    notes = data.get('notes')
     timestamp = datetime.datetime.now().isoformat()
 
     conn = sqlite3.connect(DB_PATH)
@@ -44,7 +41,6 @@ def log_health():
 
     return jsonify({'message': 'Health log saved successfully'}), 200
 
-# ✅ GET /logs — Return all entries as JSON
 @app.route('/logs', methods=['GET'])
 def get_logs():
     conn = sqlite3.connect(DB_PATH)
@@ -62,10 +58,15 @@ def get_logs():
 
     return jsonify(logs), 200
 
-# ✅ Root health check
+# Serve frontend index.html
 @app.route('/')
-def home():
-    return 'NatureMind backend is running!'
+def serve_index():
+    return send_from_directory(app.static_folder, 'index.html')
+
+# Serve all static assets (e.g., JS, CSS)
+@app.route('/<path:path>')
+def serve_static_files(path):
+    return send_from_directory(app.static_folder, path)
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=5001)
+    app.run(debug=True, port=5001)
