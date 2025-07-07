@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,13 @@
 <button onclick="logMood('happy', 'Test log from UI')">Test Mood Log</button>
 
         <main>
+          <section id="chat" class="section">
+  <h2>Talk to Lina</h2>
+  <div id="chatMessages" class="chat-box" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;"></div>
+  <input type="text" id="messageInput" placeholder="Type your message..." style="width: 80%; padding: 10px;" />
+  <button onclick="sendMessage()" style="padding: 10px;">Send</button>
+</section>
+
             <section id="home" class="section active">
                 <div class="hero-section">
                     <div class="hero-content">
@@ -682,38 +690,9 @@
             </section>
         </main>
     </div>
+   <script src="https://cdn.jsdelivr.net/npm/@vapi-ai/web@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="app.js"></script>
-    <script src="https://unpkg.com/@vapi-ai/web@latest"></script>
-    <script>
-        const vapi = new Vapi({
-            assistantId: 'a523e567-a509-4ea9-881a-815c25e72918',
-            shareKey: '5a7ab965-585e-4ef4-aca0-c5e49c1a42a4',
-            config: {
-                voice: {
-                    provider: '11labs',
-                    voiceId: '21m00Tcm4TlvDq8ikWAM'
-                }
-            }
-        });
-
-        function startVapiCall() {
-            vapi.start();
-        }
-
-        // Handle Vapi events
-        vapi.on('call-start', () => {
-            console.log('Call started');
-        });
-
-        vapi.on('call-end', () => {
-            console.log('Call ended');
-        });
-
-        vapi.on('error', (error) => {
-            console.error('Vapi error:', error);
-        });
-    </script>
+   
    <script type="text/javascript">
     (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -730,5 +709,49 @@
         v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
     })(document, 'script');
   </script>
+<script>
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+
+      // Remove active class from all links
+      document.querySelectorAll('.nav-links a').forEach(nav => nav.classList.remove('active'));
+
+      // Add active class to clicked link
+      link.classList.add('active');
+
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+
+      // Show the target section
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@vapi-ai/web@latest"></script>
+<script>
+  const vapi = new Vapi({
+    assistantId: 'a523e567-a509-4ea9-881a-815c25e72918',
+    shareKey: '5a7ab965-585e-4ef4-aca0-c5e49c1a42a4',
+    config: {
+      voice: { provider: '11labs', voiceId: '21m00Tcm4TlvDq8ikWAM' }
+    }
+  });
+
+  function startVapiCall() {
+    vapi.start();
+  }
+
+  vapi.on('call-start', () => console.log('Call started'));
+  vapi.on('call-end', () => console.log('Call ended'));
+  vapi.on('error', error => console.error('Vapi error:', error));
+</script>
+
+<script src="app.js"></script> <!-- make sure app.js comes last -->
 </body>
 </html> 

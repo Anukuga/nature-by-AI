@@ -68,8 +68,8 @@ main {
     padding: 0 1rem;
 }
 
-.section {
-    display: none;
+.section.active {
+    display: block;
     padding: 2rem;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
@@ -1161,3 +1161,20 @@ p {
         margin-top: 2rem;
     }
 } 
+.message {
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 10px;
+  max-width: 75%;
+}
+
+.user-message {
+  background-color: #d0f0c0;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.ai-message {
+  background-color: #f1f1f1;
+  align-self: flex-start;
+}

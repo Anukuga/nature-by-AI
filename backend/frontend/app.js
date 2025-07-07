@@ -41,31 +41,52 @@ messageInput.addEventListener('keypress', (e) => {
 });
 
 function sendMessage() {
+    const chatMessages = document.getElementById('chatMessages');
+    const messageInput = document.getElementById('messageInput');
     const message = messageInput.value.trim();
-    if (message) {
-        // Add user message with typing animation
-        addMessage('user', message);
-        
-        // Show typing indicator
-        const typingIndicator = document.createElement('div');
-        typingIndicator.className = 'typing-indicator';
-        typingIndicator.innerHTML = '<span></span><span></span><span></span>';
-        chatMessages.appendChild(typingIndicator);
+
+    if (!message) return;
+
+    // Display user's message
+    const userDiv = document.createElement('div');
+    userDiv.className = 'message user-message';
+    userDiv.textContent = message;
+    chatMessages.appendChild(userDiv);
+
+    // Add typing indicator
+    const typing = document.createElement('div');
+    typing.className = 'message ai-message';
+    typing.textContent = 'Lina is typing...';
+    chatMessages.appendChild(typing);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Call backend
+    fetch('http://127.0.0.1:5002/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+    })
+    .then(res => res.json())
+    .then(data => {
+        typing.remove();
+        const aiDiv = document.createElement('div');
+        aiDiv.className = 'message ai-message';
+        aiDiv.textContent = data.reply || "Sorry, I didn't understand.";
+        chatMessages.appendChild(aiDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
-        
-        // Simulate AI response with typing delay
-        setTimeout(() => {
-            chatMessages.removeChild(typingIndicator);
-            const response = getAIResponse(message);
-            addMessage('ai', response);
-            
-            // Update AI agent insights based on chat
-            updateAIInsights(message);
-        }, 1500);
-        
-        messageInput.value = '';
-    }
+    })
+    .catch(err => {
+        typing.remove();
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'message ai-message';
+        errorDiv.textContent = 'Error contacting Lina.';
+        chatMessages.appendChild(errorDiv);
+        console.error(err);
+    });
+
+    messageInput.value = '';
 }
+
 
 function addMessage(type, text) {
     const messageDiv = document.createElement('div');
@@ -87,123 +108,6 @@ function addMessage(type, text) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-function getAIResponse(message) {
-    const lowerMessage = message.toLowerCase();
-    
-    // Check for suicidal thoughts first
-    if (lowerMessage.includes('nicht mehr leben') || 
-        lowerMessage.includes('keinen ausweg') || 
-        lowerMessage.includes('i want to die') || 
-        lowerMessage.includes('i don\'t want to go on')) {
-        return "Das tut mir sehr leid, das zu hören. Es ist ganz wichtig, dass Du jetzt nicht allein bleibst. Bitte wende Dich an eine professionelle Stelle – zum Beispiel den Krisendienst unter 📞 0800 111 0 111 oder sprich mit Deinem Arzt oder Deiner Ärztin. Du bist nicht allein.";
-    }
-
-    // German responses
-    if (lowerMessage.includes('hallo') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-        return "Hallo! Wie geht es Dir heute? Ich bin hier, um Dir zuzuhören und Dich zu unterstützen.";
-    }
-
-    if (lowerMessage.includes('angst') || lowerMessage.includes('ängstlich') || lowerMessage.includes('fear')) {
-        return "Es ist völlig normal, dass Du Angst hast. Das ist eine natürliche Reaktion auf diese schwierige Situation. Möchtest Du mit mir darüber sprechen, was Dir besonders Angst macht? Oder sollen wir eine kleine Atemübung machen, die Dir helfen kann, Dich zu beruhigen?";
-    }
-
-    if (lowerMessage.includes('überfordert') || lowerMessage.includes('overwhelmed')) {
-        return "Ich verstehe, dass Du Dich überfordert fühlst. Das ist bei einer Krebsdiagnose völlig normal. Lass uns einen Moment innehalten. Möchtest Du, dass wir gemeinsam einen kleinen Bodyscan machen? Das kann helfen, Dich wieder zu zentrieren.";
-    }
-
-    if (lowerMessage.includes('allein') || lowerMessage.includes('alone')) {
-        return "Du bist nicht allein, auch wenn es sich manchmal so anfühlt. Viele Menschen verstehen, was Du durchmachst. Möchtest Du mir erzählen, was Dich gerade besonders belastet?";
-    }
-
-    if (lowerMessage.includes('chemotherapie') || lowerMessage.includes('chemotherapy')) {
-        return "Die Chemotherapie kann sehr beängstigend sein. Es ist okay, sich davor zu fürchten. Möchtest Du darüber sprechen, was Dir besonders Sorgen macht? Oder sollen wir uns gemeinsam auf die Behandlung vorbereiten?";
-    }
-
-    if (lowerMessage.includes('schmerzen') || lowerMessage.includes('pain')) {
-        return "Schmerzen können sehr belastend sein. Es ist wichtig, dass Du Deinem Behandlungsteam davon erzählst. Möchtest Du, dass wir gemeinsam eine Entspannungsübung machen, die Dir vielleicht etwas Linderung bringen kann?";
-    }
-
-    if (lowerMessage.includes('müde') || lowerMessage.includes('tired') || lowerMessage.includes('erschöpft')) {
-        return "Erschöpfung ist eine häufige Begleiterscheinung. Es ist wichtig, dass Du auf Deinen Körper hörst. Möchtest Du, dass wir gemeinsam eine kleine Pause machen? Ich kann Dir auch eine sanfte Atemübung zeigen, die Dir neue Energie geben kann.";
-    }
-
-    if (lowerMessage.includes('familie') || lowerMessage.includes('family')) {
-        return "Die Diagnose betrifft nicht nur Dich, sondern auch Deine Familie. Es ist normal, dass das für alle schwierig ist. Möchtest Du darüber sprechen, wie es Dir mit der Situation in Deiner Familie geht?";
-    }
-
-    if (lowerMessage.includes('zukunft') || lowerMessage.includes('future')) {
-        return "Es ist verständlich, dass Du Dir Sorgen um die Zukunft machst. Lass uns einen Moment innehalten und uns auf den jetzigen Moment konzentrieren. Möchtest Du, dass wir gemeinsam eine kleine Achtsamkeitsübung machen?";
-    }
-
-    if (lowerMessage.includes('schlaf') || lowerMessage.includes('sleep')) {
-        return "Schlafprobleme sind bei einer Krebsdiagnose leider häufig. Möchtest Du, dass ich Dir eine kleine Entspannungsübung zeige, die Dir beim Einschlafen helfen kann?";
-    }
-
-    // Default responses
-    const defaultResponses = [
-        "Ich verstehe, dass das für Dich sehr belastend ist. Möchtest Du mir mehr darüber erzählen?",
-        "Es tut mir leid, dass Du das durchmachen musst. Wie kann ich Dir in diesem Moment am besten helfen?",
-        "Ich bin hier, um Dir zuzuhören. Was beschäftigt Dich gerade am meisten?",
-        "Es ist okay, sich so zu fühlen. Möchtest Du, dass wir gemeinsam eine kleine Atemübung machen?",
-        "Ich höre Dir zu. Was würde Dir jetzt gut tun?",
-        "Es ist völlig normal, sich so zu fühlen. Möchtest Du darüber sprechen, was Dir gerade durch den Kopf geht?"
-    ];
-
-    return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
-}
-
-// Enhanced meditation timer with visual feedback
-let meditationTimer;
-let timeLeft = 600; // 10 minutes in seconds
-
-document.querySelector('.start-btn').addEventListener('click', function() {
-    const button = this;
-    const icon = button.querySelector('i');
-    
-    if (meditationTimer) {
-        clearInterval(meditationTimer);
-        button.innerHTML = '<i class="fas fa-play"></i> Start Meditation';
-        timeLeft = 600;
-        updateTimerDisplay();
-        meditationTimer = null;
-        document.querySelector('.timer-display').style.color = 'var(--primary-green)';
-    } else {
-        button.innerHTML = '<i class="fas fa-pause"></i> Stop Meditation';
-        meditationTimer = setInterval(() => {
-            timeLeft--;
-            updateTimerDisplay();
-            
-            // Visual feedback during meditation
-            const progress = (timeLeft / 600) * 100;
-            document.querySelector('.timer-display').style.color = 
-                `hsl(${120 - (progress * 0.5)}, 70%, 45%)`;
-            
-            if (timeLeft <= 0) {
-                clearInterval(meditationTimer);
-                button.innerHTML = '<i class="fas fa-play"></i> Start Meditation';
-                timeLeft = 600;
-                meditationTimer = null;
-                document.querySelector('.timer-display').style.color = 'var(--primary-green)';
-                
-                // Show completion message
-                const completionMessage = document.createElement('div');
-                completionMessage.className = 'completion-message';
-                completionMessage.innerHTML = `
-                    <i class="fas fa-check-circle"></i>
-                    <p>Meditation session complete! Great job!</p>
-                `;
-                document.querySelector('.meditation-timer').appendChild(completionMessage);
-                
-                setTimeout(() => {
-                    completionMessage.remove();
-                }, 5000);
-                
-                // Update AI insights after meditation
-                updateAIInsights('meditation completed');
-            }
-        }, 1000);
-    }
-});
 
 function updateTimerDisplay() {
     const minutes = Math.floor(timeLeft / 60);
